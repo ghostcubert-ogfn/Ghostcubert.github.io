@@ -76,7 +76,6 @@
       background: #FF0000;
     }
 
-    /* MAIN CONTENT */
     main {
       max-width: 1000px;
       margin: 0 auto;
@@ -145,22 +144,18 @@
       margin-bottom: 20px;
     }
 
-    .youtube-container {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%; /* 16:9 aspect ratio */
-      height: 0;
-      overflow: hidden;
-      border-radius: 16px;
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 20px;
     }
 
-    .youtube-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
+    .video-grid iframe {
       width: 100%;
-      height: 100%;
+      height: 200px;
       border: none;
+      border-radius: 12px;
     }
 
     /* HIDDEN */
@@ -189,6 +184,10 @@
 
       .home-image img {
         max-width: 300px;
+      }
+
+      .video-grid iframe {
+        height: 180px;
       }
     }
   </style>
@@ -244,13 +243,18 @@
     <!-- YOUTUBE SECTION -->
     <div id="youtube" class="hidden">
       <h1>Ghost Cubert YouTube Channel</h1>
-      <div class="youtube-container">
-        <iframe 
-          src="https://www.youtube.com/embed?listType=user_uploads&list=ghostcubert" 
-          title="Ghost Cubert YouTube Channel" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
+
+      <div class="video-grid">
+        <!-- Video 1 -->
+        <iframe src="https://www.youtube.com/embed/U_41Y87YqW8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- Video 2 -->
+        <iframe src="https://www.youtube.com/embed/7fxICX3HTRQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- Video 3 -->
+        <iframe src="https://www.youtube.com/embed/fADvIPW-Bnk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- Video 4 -->
+        <iframe src="https://www.youtube.com/embed/drAeAaO8Cks" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- Video 5 -->
+        <iframe src="https://www.youtube.com/embed/A5iYT0Q5MD4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
 
@@ -258,16 +262,13 @@
 
   <script>
     function showSection(sectionId) {
-      // Hide all sections
       document.getElementById('home').classList.add('hidden');
       document.getElementById('archives').classList.add('hidden');
       document.getElementById('youtube').classList.add('hidden');
 
-      // Show selected section
       document.getElementById(sectionId).classList.remove('hidden');
     }
 
-    // Show home section by default
     window.onload = function() {
       showSection('home');
     };
