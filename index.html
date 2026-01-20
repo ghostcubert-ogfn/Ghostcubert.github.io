@@ -141,14 +141,30 @@
 
     /* YOUTUBE SECTION */
     #youtube h1 {
-      margin-bottom: 20px;
+      margin-bottom: 16px;
+    }
+
+    .channel-link {
+      display: inline-block;
+      padding: 12px 28px;
+      margin-bottom: 24px;
+      font-weight: 600;
+      color: #fff;
+      border: 2px solid #FF0000;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .channel-link:hover {
+      background: #FF0000;
     }
 
     .video-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 24px;
-      margin-top: 20px;
+      margin-top: 10px;
     }
 
     .video-grid iframe {
@@ -244,16 +260,16 @@
     <div id="youtube" class="hidden">
       <h1>Ghost Cubert YouTube Channel</h1>
 
+      <!-- Channel link -->
+      <a href="https://youtube.com/@ghostcubert?si=ds7qkO-lEWbBrLnJ" target="_blank" class="channel-link">
+        Visit Channel
+      </a>
+
       <div class="video-grid">
-        <!-- Video 1 -->
         <iframe src="https://www.youtube.com/embed/U_41Y87YqW8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <!-- Video 2 -->
         <iframe src="https://www.youtube.com/embed/7fxICX3HTRQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <!-- Video 3 -->
         <iframe src="https://www.youtube.com/embed/fADvIPW-Bnk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <!-- Video 4 -->
         <iframe src="https://www.youtube.com/embed/drAeAaO8Cks" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <!-- Video 5 -->
         <iframe src="https://www.youtube.com/embed/A5iYT0Q5MD4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
