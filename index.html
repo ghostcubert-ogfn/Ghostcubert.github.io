@@ -140,6 +140,29 @@
       background: #b88cff;
     }
 
+    /* YOUTUBE SECTION */
+    #youtube h1 {
+      margin-bottom: 20px;
+    }
+
+    .youtube-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 16px;
+    }
+
+    .youtube-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
     /* HIDDEN */
     .hidden {
       display: none;
@@ -178,6 +201,7 @@
     <div class="nav-buttons">
       <button onclick="showSection('home')">Home</button>
       <button onclick="showSection('archives')">Builds Archives</button>
+      <button onclick="showSection('youtube')" class="youtube">YouTube</button>
       <a
         href="https://discord.gg/5cezKQCuTu"
         class="discord"
@@ -185,14 +209,6 @@
         rel="noopener"
       >
         Discord
-      </a>
-      <a
-        href="https://youtube.com/@ghostcubert?si=ds7qkO-lEWbBrLnJ"
-        class="youtube"
-        target="_blank"
-        rel="noopener"
-      >
-        YouTube
       </a>
     </div>
   </header>
@@ -217,16 +233,27 @@
     <div id="archives" class="hidden">
       <h1>Builds Archives</h1>
       <div class="archive-buttons">
-        <!-- Original builds -->
         <a href="https://builds.cbn.lol/builds" target="_blank" rel="noopener">CBN Builds</a>
         <a href="https://builds.fortforge.dev/builds" target="_blank" rel="noopener">fortforge.dev</a>
-
-        <!-- GitHub builds -->
         <a href="https://github.com/n6617x/Fortnitebuilds" target="_blank" rel="noopener">n6617x/Fortnitebuilds</a>
         <a href="https://github.com/andr1ww/Fortnitebuilds" target="_blank" rel="noopener">andr1ww/Fortnitebuilds</a>
         <a href="https://github.com/llamaqwerty/fortnite-builds-archive" target="_blank" rel="noopener">llamaqwerty Archive</a>
       </div>
     </div>
+
+    <!-- YOUTUBE SECTION -->
+    <div id="youtube" class="hidden">
+      <h1>Ghost Cubert YouTube Channel</h1>
+      <div class="youtube-container">
+        <iframe 
+          src="https://www.youtube.com/embed?listType=user_uploads&list=ghostcubert" 
+          title="Ghost Cubert YouTube Channel" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
   </main>
 
   <script>
@@ -234,6 +261,7 @@
       // Hide all sections
       document.getElementById('home').classList.add('hidden');
       document.getElementById('archives').classList.add('hidden');
+      document.getElementById('youtube').classList.add('hidden');
 
       // Show selected section
       document.getElementById(sectionId).classList.remove('hidden');
