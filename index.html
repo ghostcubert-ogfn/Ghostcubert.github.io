@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project Pump</title>
+  <title>Build Archives</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +23,7 @@
       color: #fff;
     }
 
-    /* NAVBAR */
+    /* HEADER */
     header {
       display: flex;
       justify-content: space-between;
@@ -31,90 +31,63 @@
       padding: 24px 64px;
     }
 
-    .site-name {
+    .title {
       font-size: 22px;
       font-weight: 700;
       color: #b88cff;
     }
 
-    .tabs {
+    .nav-buttons {
       display: flex;
-      gap: 20px;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
-    .tab {
-      background: none;
-      border: none;
-      color: #ccc;
-      font-size: 16px;
+    .nav-buttons a {
+      text-decoration: none;
+      padding: 12px 26px;
+      border-radius: 999px;
       font-weight: 600;
-      cursor: pointer;
-    }
-
-    .tab.active {
       color: #fff;
-      border-bottom: 2px solid #b88cff;
-      padding-bottom: 4px;
+      border: 2px solid #9b5cff;
+      transition: all 0.2s ease;
     }
 
-    /* CONTENT */
-    .hero {
-      max-width: 1100px;
+    .nav-buttons a:hover {
+      background: #9b5cff;
+    }
+
+    .discord {
+      border-color: #5865F2 !important;
+    }
+
+    .discord:hover {
+      background: #5865F2;
+    }
+
+    /* MAIN */
+    main {
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 100px 64px;
+      padding: 120px 64px;
+      text-align: center;
     }
 
-    .hidden {
-      display: none;
-    }
-
-    h1 {
+    main h1 {
       font-size: 56px;
       margin-bottom: 24px;
     }
 
-    h1 span {
+    main h1 span {
       color: #b88cff;
     }
 
-    p {
-      max-width: 600px;
+    main p {
+      max-width: 650px;
+      margin: 0 auto;
       line-height: 1.7;
       color: #cfcfe6;
-      margin-bottom: 40px;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #9b5cff, #c77dff);
-      color: #fff;
-      padding: 16px 34px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      box-shadow: 0 0 30px rgba(155,92,255,0.55);
-    }
-
-    .btn-secondary {
-      border: 2px solid #5865F2;
-      color: #fff;
-      padding: 16px 34px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .build-box {
-      margin-top: 30px;
-      padding: 24px;
-      border-radius: 16px;
-      background: linear-gradient(180deg, #1b0f30, #12091f);
-      max-width: 600px;
+      font-size: 18px;
     }
 
     /* RESPONSIVE */
@@ -122,14 +95,14 @@
       header {
         padding: 20px 24px;
         flex-direction: column;
-        gap: 12px;
+        gap: 16px;
       }
 
-      .hero {
-        padding: 72px 24px;
+      main {
+        padding: 80px 24px;
       }
 
-      h1 {
+      main h1 {
         font-size: 42px;
       }
     }
@@ -138,78 +111,36 @@
 <body>
 
   <header>
-    <div class="site-name">Project Pump</div>
-    <div class="tabs">
-      <button class="tab active" onclick="showTab('home')">Home</button>
-      <button class="tab" onclick="showTab('download')">Download Launcher</button>
-      <button class="tab" onclick="showTab('devs')">Developers</button>
+    <div class="title">Build Archives</div>
+
+    <div class="nav-buttons">
+      <a href="https://builds.cbn.lol/builds" target="_blank" rel="noopener">
+        CBN Builds
+      </a>
+
+      <a href="https://builds.fortforge.dev/builds" target="_blank" rel="noopener">
+        fortforge.dev
+      </a>
+
+      <a
+        href="https://discord.gg/5cezKQCuTu"
+        class="discord"
+        target="_blank"
+        rel="noopener"
+      >
+        Discord
+      </a>
     </div>
   </header>
 
-  <section class="hero">
-
-    <!-- HOME TAB -->
-    <div id="home">
-      <h1><span>Project</span> Pump</h1>
-      <p>
-        Re-experience Chapter 4 Season 2! We host EU Lategame Infinite
-        Respawns with Arena. Drop in with powerful pre-set loadouts,
-        stacked gear, and intense endgame action.
-      </p>
-
-      <div class="buttons">
-        <a href="https://r2.ploosh.dev/24.20.zip" class="btn-primary">
-          Download 24.20
-        </a>
-
-        <a
-          href="https://discord.gg/Xjf7uZJuaw"
-          class="btn-secondary"
-          target="_blank"
-          rel="noopener"
-        >
-          Discord Server
-        </a>
-      </div>
-    </div>
-
-    <!-- DOWNLOAD TAB -->
-    <div id="download" class="hidden">
-      <h1>Launcher Build</h1>
-      <p>
-        This is the <strong>24.20 build</strong> used by Project Pump.
-      </p>
-
-      <div class="build-box">
-        <a href="https://r2.ploosh.dev/24.20.zip" class="btn-primary">
-          Download 24.20 Build
-        </a>
-      </div>
-    </div>
-
-    <!-- DEVELOPERS TAB -->
-    <div id="devs" class="hidden">
-      <h1>Developers</h1>
-      <p><strong>Cody</strong></p>
-    </div>
-
-  </section>
-
-  <script>
-    function showTab(tabId) {
-      document.querySelectorAll('.hero > div').forEach(div => {
-        div.classList.add('hidden');
-      });
-
-      document.getElementById(tabId).classList.remove('hidden');
-
-      document.querySelectorAll('.tab').forEach(tab => {
-        tab.classList.remove('active');
-      });
-
-      event.target.classList.add('active');
-    }
-  </script>
+  <main>
+    <h1><span>Build</span> Archives</h1>
+    <p>
+      A collection of Fortnite build archives and resources.
+      Use the buttons above to access different build repositories
+      or join the community Discord.
+    </p>
+  </main>
 
 </body>
 </html>
