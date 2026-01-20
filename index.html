@@ -43,17 +43,19 @@
       flex-wrap: wrap;
     }
 
-    .nav-buttons a {
+    .nav-buttons button, .nav-buttons a {
       text-decoration: none;
       padding: 12px 26px;
       border-radius: 999px;
       font-weight: 600;
       color: #fff;
       border: 2px solid #9b5cff;
+      cursor: pointer;
+      background: none;
       transition: all 0.2s ease;
     }
 
-    .nav-buttons a:hover {
+    .nav-buttons button:hover, .nav-buttons a:hover {
       background: #9b5cff;
     }
 
@@ -65,7 +67,7 @@
       background: #5865F2;
     }
 
-    /* MAIN */
+    /* MAIN CONTENT */
     main {
       max-width: 1000px;
       margin: 0 auto;
@@ -73,21 +75,32 @@
       text-align: center;
     }
 
-    main h1 {
-      font-size: 56px;
-      margin-bottom: 24px;
+    .archive-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 40px;
     }
 
-    main h1 span {
-      color: #b88cff;
+    .archive-buttons a {
+      padding: 16px 34px;
+      border-radius: 999px;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+      border: 2px solid #b88cff;
+      transition: all 0.2s ease;
+      display: inline-block;
     }
 
-    main p {
-      max-width: 650px;
-      margin: 0 auto;
-      line-height: 1.7;
-      color: #cfcfe6;
-      font-size: 18px;
+    .archive-buttons a:hover {
+      background: #b88cff;
+    }
+
+    /* HIDDEN */
+    .hidden {
+      display: none;
     }
 
     /* RESPONSIVE */
@@ -101,27 +114,16 @@
       main {
         padding: 80px 24px;
       }
-
-      main h1 {
-        font-size: 42px;
-      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="title">Build Archives</div>
+    <div class="title">Project Builds</div>
 
     <div class="nav-buttons">
-      <a href="https://builds.cbn.lol/builds" target="_blank" rel="noopener">
-        CBN Builds
-      </a>
-
-      <a href="https://builds.fortforge.dev/builds" target="_blank" rel="noopener">
-        fortforge.dev
-      </a>
-
+      <button onclick="showBuilds()">Builds Archives</button>
       <a
         href="https://discord.gg/5cezKQCuTu"
         class="discord"
@@ -134,13 +136,28 @@
   </header>
 
   <main>
-    <h1><span>Build</span> Archives</h1>
-    <p>
-      A collection of Fortnite build archives and resources.
-      Use the buttons above to access different build repositories
-      or join the community Discord.
-    </p>
+    <div id="archives" class="hidden">
+      <h1>Builds Archives</h1>
+      <div class="archive-buttons">
+        <a href="https://builds.cbn.lol/builds" target="_blank" rel="noopener">CBN Builds</a>
+        <a href="https://builds.fortforge.dev/builds" target="_blank" rel="noopener">fortforge.dev</a>
+      </div>
+    </div>
+    <div id="welcome">
+      <h1>Welcome to Project Builds</h1>
+      <p>
+        Click the "Builds Archives" button above to access all available builds.
+        Join the Discord to stay up-to-date!
+      </p>
+    </div>
   </main>
+
+  <script>
+    function showBuilds() {
+      document.getElementById('welcome').classList.add('hidden');
+      document.getElementById('archives').classList.remove('hidden');
+    }
+  </script>
 
 </body>
 </html>
