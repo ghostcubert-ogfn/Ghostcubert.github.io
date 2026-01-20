@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Build Archives</title>
+  <title>Project Builds</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,6 +29,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 24px 64px;
+      flex-wrap: wrap;
     }
 
     .title {
@@ -107,8 +108,6 @@
     @media (max-width: 768px) {
       header {
         padding: 20px 24px;
-        flex-direction: column;
-        gap: 16px;
       }
 
       main {
@@ -123,7 +122,8 @@
     <div class="title">Project Builds</div>
 
     <div class="nav-buttons">
-      <button onclick="showBuilds()">Builds Archives</button>
+      <button onclick="showSection('home')">Home</button>
+      <button onclick="showSection('archives')">Builds Archives</button>
       <a
         href="https://discord.gg/5cezKQCuTu"
         class="discord"
@@ -136,6 +136,15 @@
   </header>
 
   <main>
+    <!-- HOME SECTION -->
+    <div id="home">
+      <h1>Welcome to Project Builds</h1>
+      <p>
+        This is the main page. Click the "Builds Archives" button above to access all available builds. Join the Discord to stay up-to-date!
+      </p>
+    </div>
+
+    <!-- BUILDS ARCHIVES SECTION -->
     <div id="archives" class="hidden">
       <h1>Builds Archives</h1>
       <div class="archive-buttons">
@@ -143,20 +152,22 @@
         <a href="https://builds.fortforge.dev/builds" target="_blank" rel="noopener">fortforge.dev</a>
       </div>
     </div>
-    <div id="welcome">
-      <h1>Welcome to Project Builds</h1>
-      <p>
-        Click the "Builds Archives" button above to access all available builds.
-        Join the Discord to stay up-to-date!
-      </p>
-    </div>
   </main>
 
   <script>
-    function showBuilds() {
-      document.getElementById('welcome').classList.add('hidden');
-      document.getElementById('archives').classList.remove('hidden');
+    function showSection(sectionId) {
+      // Hide all sections
+      document.getElementById('home').classList.add('hidden');
+      document.getElementById('archives').classList.add('hidden');
+
+      // Show selected section
+      document.getElementById(sectionId).classList.remove('hidden');
     }
+
+    // Show home section by default when page loads
+    window.onload = function() {
+      showSection('home');
+    };
   </script>
 
 </body>
